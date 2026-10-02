@@ -1,0 +1,177 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { APP_NAME, APP_STORE_URL, SITE_URL } from '../../config';
+import appIcon from '../../assets/app-icon.png';
+import { formatDate, mascots, readingMinutes, sortPosts, type Post } from '../../lib/blog';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({ params: { slug: post.id }, props: { post, all: posts } }));
+}
+
+const { post, all } = Astro.props as { post: Post; all: Post[] };
+const { Content } = await render(post);
+const { title, description, pubDate, updatedDate, mascot } = post.data;
+const url = new URL(`/blog/${post.id}`, SITE_URL).href;
+const minutes = readingMinutes(post.body);
+
+// Otros dos artículos para seguir leyendo (los más recientes, sin el actual).
+const related = sortPosts(all.filter((p) => p.id !== post.id)).slice(0, 2);
+---
+
+<Base
+  title={`${title} — Blog de Gisus`}
+  description={description}
+  ogType="article"
+  publishedTime={pubDate}
+  modifiedTime={updatedDate}
+  jsonLd={{
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'BlogPosting',
+        headline: title,
+        description,
+        url,
+        mainEntityOfPage: url,
+        datePublished: pubDate.toISOString(),
+        dateModified: (updatedDate ?? pubDate).toISOString(),
+        inLanguage: 'es',
+        image: new URL('/og.png', SITE_URL).href,
+        author: { '@type': 'Organization', name: APP_NAME, url: SITE_URL },
+        publisher: {
+          '@type': 'Organization',
+          name: APP_NAME,
+          logo: { '@type': 'ImageObject', url: new URL('/icon-512.png', SITE_URL).href },
+        },
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Inicio', item: SITE_URL },
+          { '@type': 'ListItem', position: 2, name: 'Blog', item: new URL('/blog', SITE_URL).href },
+          { '@type': 'ListItem', position: 3, name: title, item: url },
+        ],
+      },
+    ],
+  }}
+>
+  <article class="post">
+    <header class="post-head container-text">
+      <nav class="crumbs" aria-label="Ruta">
+        <a href="/blog">Blog</a>
+      </nav>
+      <h1>{title}</h1>
+      <p class="lede">{description}</p>
+      <p class="meta">
+        <time datetime={pubDate.toISOString()}>{formatDate(pubDate)}</time>
+        <span aria-hidden="true">·</span>
+        <span>{minutes} min de lectura</span>
+      </p>
+      <Image class="post-mascot" src={mascots[mascot]} alt="" width={160} height={160} widths={[160, 320]} sizes="160px" loading="eager" />
+    </header>
+
+    <div class="post-body container-text">
+      <Content />
+    </div>
+
+    <aside class="container-text">
+      <div class="cta">
+        <Image src={appIcon} alt="" class="cta-icon" width={72} height={72} widths={[72, 144]} sizes="72px" />
+        <div>
+          <p class="cta-title">Conoce a quien tienes cerca con Gisus.</p>
+          <p class="cta-text">Enciende tu radar, haz match y únete a planes en tu zona. Disponible para iPhone.</p>
+          <a class="btn" href={APP_STORE_URL} rel="noopener">Descargar en la App Store</a>
+        </div>
+      </div>
+    </aside>
+  </article>
+
+  {related.length > 0 && (
+    <section class="section section-alt" aria-labelledby="related-title">
+      <div class="container">
+        <h2 id="related-title" class="related-title">Sigue leyendo</h2>
+        <ul class="related">
+          {related.map((p) => (
+            <li>
+              <a href={`/blog/${p.id}`}>
+                <Image src={mascots[p.data.mascot]} alt="" width={72} height={72} widths={[72, 144]} sizes="72px" />
+                <span>
+                  <strong>{p.data.title}</strong>
+                  <small>{formatDate(p.data.pubDate)}</small>
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  )}
+</Base>
+
+<style>
+  .container-text { width: min(100% - 44px, 692px); margin-inline: auto; }
+
+  .post-head { padding: 72px 0 8px; position: relative; }
+  .crumbs { font-size: 14px; font-weight: 600; margin-bottom: 14px; }
+  .crumbs a::after { content: ' ›'; }
+  .post-head h1 { font-size: clamp(34px, 5vw, 48px); line-height: 1.08; letter-spacing: -0.005em; margin: 0; }
+  .lede { font-size: 21px; line-height: 1.38; color: var(--text-2); margin: 16px 0 0; }
+  .meta { display: flex; gap: 8px; font-size: 14px; color: var(--text-3); margin: 20px 0 0; }
+  .post-mascot { display: block; width: 140px; height: 140px; object-fit: contain; margin: 28px 0 0; }
+
+  .post-body { padding: 16px 0 24px; font-size: 19px; line-height: 1.58; color: #333336; }
+  .post-body :global(h2) { font-size: 28px; line-height: 1.14; color: var(--text); margin: 48px 0 12px; letter-spacing: 0.004em; }
+  .post-body :global(h3) { font-size: 21px; line-height: 1.24; color: var(--text); margin: 32px 0 8px; }
+  .post-body :global(p) { margin: 0 0 18px; }
+  .post-body :global(ul),
+  .post-body :global(ol) { padding-left: 24px; margin: 0 0 18px; }
+  .post-body :global(li + li) { margin-top: 8px; }
+  .post-body :global(strong) { color: var(--text); }
+  .post-body :global(blockquote) {
+    margin: 28px 0;
+    padding: 18px 22px;
+    border-radius: 16px;
+    background: #fff0f6;
+    color: var(--text);
+  }
+  .post-body :global(blockquote p:last-child) { margin: 0; }
+
+  .cta {
+    display: flex;
+    gap: 22px;
+    align-items: flex-start;
+    margin: 32px 0 88px;
+    padding: 28px;
+    border-radius: var(--radius-card);
+    background: var(--bg-alt);
+  }
+  .cta-icon { width: 72px; height: 72px; border-radius: 16px; flex-shrink: 0; }
+  .cta-title { font-size: 21px; font-weight: 700; margin: 0; color: var(--text); }
+  .cta-text { color: var(--text-2); margin: 6px 0 16px; }
+
+  .related-title { font-size: 28px; margin: 0 0 24px; }
+  .related { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; list-style: none; margin: 0; padding: 0; }
+  .related a {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    padding: 20px;
+    border-radius: 18px;
+    background: #fff;
+    color: var(--text);
+  }
+  .related a:hover { text-decoration: none; box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.08); }
+  .related img { width: 64px; height: 64px; object-fit: contain; flex-shrink: 0; }
+  .related strong { display: block; font-size: 17px; line-height: 1.25; }
+  .related small { color: var(--text-3); font-size: 13px; }
+
+  @media (max-width: 734px) {
+    .post-head { padding-top: 48px; }
+    .post-body { font-size: 17px; }
+    .cta { flex-direction: column; }
+    .related { grid-template-columns: 1fr; }
+  }
+</style>

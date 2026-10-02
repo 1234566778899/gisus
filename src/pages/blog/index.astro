@@ -1,0 +1,121 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { APP_NAME, SITE_URL } from '../../config';
+import { formatDate, mascots, sortPosts } from '../../lib/blog';
+
+const posts = sortPosts(await getCollection('blog'));
+const featured = posts.find((p) => p.data.featured) ?? posts[0];
+const rest = posts.filter((p) => p !== featured);
+
+const description =
+  'Ideas para conocer gente cerca de ti, consejos para la primera cita y guías para sacarle provecho a Gisus.';
+---
+
+<Base
+  title="Blog — Gisus"
+  description={description}
+  jsonLd={{
+    '@context': 'https://schema.org',
+    '@type': 'Blog',
+    name: `Blog de ${APP_NAME}`,
+    url: new URL('/blog', SITE_URL).href,
+    inLanguage: 'es',
+    blogPost: posts.map((p) => ({
+      '@type': 'BlogPosting',
+      headline: p.data.title,
+      url: new URL(`/blog/${p.id}`, SITE_URL).href,
+      datePublished: p.data.pubDate.toISOString(),
+    })),
+  }}
+>
+  <section class="blog-head container">
+    <p class="eyebrow">Blog</p>
+    <h1 class="headline">Conoce a quien tienes cerca.<br /><span class="muted">Ideas y consejos.</span></h1>
+  </section>
+
+  {featured && (
+    <section class="container">
+      <a class="featured" href={`/blog/${featured.id}`}>
+        <div class="featured-copy">
+          <p class="meta">{formatDate(featured.data.pubDate)}</p>
+          <h2>{featured.data.title}</h2>
+          <p class="desc">{featured.data.description}</p>
+          <span class="link-more">Leer artículo</span>
+        </div>
+        <Image class="featured-img" src={mascots[featured.data.mascot]} alt="" width={240} height={240} widths={[240, 480]} sizes="240px" />
+      </a>
+    </section>
+  )}
+
+  <section class="section section-alt list-section" aria-label="Todos los artículos">
+    <ul class="grid container">
+      {rest.map((p) => (
+        <li>
+          <a class="post-card" href={`/blog/${p.id}`}>
+            <Image class="post-img" src={mascots[p.data.mascot]} alt="" width={120} height={120} widths={[120, 240]} sizes="120px" />
+            <p class="meta">{formatDate(p.data.pubDate)}</p>
+            <h2>{p.data.title}</h2>
+            <p class="desc">{p.data.description}</p>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+</Base>
+
+<style>
+  .blog-head { padding: 80px 0 40px; }
+  .muted { color: var(--text-3); }
+
+  .featured {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    padding: 44px;
+    margin-bottom: 72px;
+    border-radius: var(--radius-card);
+    background: radial-gradient(120% 90% at 85% 100%, #4a0f2a 0%, #000 62%);
+    color: #f5f5f7;
+    transition: transform 0.3s ease;
+  }
+  .featured:hover { text-decoration: none; transform: scale(1.005); }
+  .featured h2 { font-size: clamp(28px, 3.6vw, 40px); line-height: 1.1; margin: 6px 0 12px; }
+  .featured .desc { color: #c7c7cc; font-size: 19px; margin: 0 0 20px; max-width: 32em; }
+  .featured .meta { color: #ff6ba3; }
+  .featured .link-more { color: #2997ff; font-size: 17px; }
+  .featured-img { width: 220px; height: 220px; object-fit: contain; flex-shrink: 0; }
+
+  .list-section { padding-top: 64px; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin-block: 0;
+  }
+  .post-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 28px;
+    border-radius: 18px;
+    background: #fff;
+    color: var(--text);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .post-card:hover { text-decoration: none; transform: scale(1.01); box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.08); }
+  .post-img { width: 96px; height: 96px; object-fit: contain; margin-bottom: 16px; }
+  .post-card h2 { font-size: 21px; line-height: 1.2; margin: 4px 0 8px; }
+  .post-card .desc { color: var(--text-2); font-size: 15px; margin: 0; }
+  .meta { font-size: 13px; font-weight: 600; color: var(--pink-deep); margin: 0; letter-spacing: -0.01em; }
+
+  @media (max-width: 734px) {
+    .blog-head { padding: 56px 0 28px; }
+    .featured { flex-direction: column-reverse; align-items: flex-start; padding: 28px; margin-bottom: 48px; }
+    .featured-img { width: 140px; height: 140px; }
+  }
+</style>
