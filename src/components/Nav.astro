@@ -16,7 +16,7 @@ const links = [
 <header class="globalnav">
   <nav class="globalnav-inner" aria-label="Principal">
     <a href="/" class="brand" aria-label="Gisus, inicio">
-      <Image src={logo} alt="" height={26} widths={[66, 132]} sizes="66px" loading="eager" />
+      <Image src={logo} alt="" height={36} widths={[92, 184, 276]} sizes="92px" loading="eager" />
     </a>
     <ul class="links">
       {links.map((l) => (
@@ -48,6 +48,7 @@ const links = [
     gap: 16px;
   }
   .brand { display: flex; align-items: center; }
+  .brand img { height: 36px; width: auto; }
   .links {
     display: flex;
     gap: clamp(16px, 4vw, 44px);
@@ -57,15 +58,16 @@ const links = [
   }
   .links a,
   .get {
-    font-size: 12px;
-    letter-spacing: -0.01em;
+    font-size: 15px;
+    letter-spacing: -0.016em;
     color: rgba(0, 0, 0, 0.8);
   }
   .links a:hover { color: #000; text-decoration: none; }
   .get {
     background: var(--link);
     color: #fff;
-    padding: 4px 12px;
+    font-weight: 500;
+    padding: 7px 16px;
     border-radius: 980px;
   }
   .get:hover { background: #0077ed; text-decoration: none; }
@@ -73,5 +75,7 @@ const links = [
   /* En pantallas angostas solo se ven el logo y "Descargar" (como apple.com). */
   @media (max-width: 734px) {
     .links { display: none; }
+    .brand img { height: 32px; }
+    .get { font-size: 14px; padding: 6px 14px; }
   }
 </style>

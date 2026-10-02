@@ -11,6 +11,9 @@ import inviting from '../assets/mascot/inviting.png';
 import celebrating from '../assets/mascot/celebrating.png';
 import sleeping from '../assets/mascot/sleeping.png';
 import waiting from '../assets/mascot/waiting.png';
+import screenNearby from '../assets/screens/cerca.png';
+import screenPlans from '../assets/screens/planes.png';
+import screenChat from '../assets/screens/chat.png';
 
 // Fila de accesos bajo el título (como la de modelos en apple.com/ipad).
 const chips = [
@@ -20,6 +23,17 @@ const chips = [
   { href: '#chat', label: 'Chat', img: celebrating },
   { href: '#invisible', label: 'Modo invisible', img: sleeping },
   { href: '#privacidad', label: 'Privacidad', img: waiting },
+];
+
+// Pantallas del encabezado (capturas del modo demo de la app, con cuentas ficticias).
+// El orden es el visual: izquierda, centro (al frente) y derecha.
+const screens = [
+  { pos: 'left', img: screenPlans, caption: 'Planes en el mapa',
+    alt: 'Pantalla Planes de Gisus: un mapa con planes cercanos, como un café, una rodada en bici y una expo.' },
+  { pos: 'center', img: screenNearby, caption: 'Radar de quién está cerca',
+    alt: 'Pantalla Cerca de ti de Gisus: el radar muestra a ocho personas cerca, con su distancia aproximada.' },
+  { pos: 'right', img: screenChat, caption: 'Chat con tus matches',
+    alt: 'Chat de Gisus con un match: mensajes para quedar en un plan de café y un sticker de Gisi.' },
 ];
 
 // Tarjetas de la galería "Conoce a Gisi."
@@ -78,25 +92,48 @@ const appJsonLd = {
 ---
 
 <Base jsonLd={appJsonLd}>
-  <!-- Encabezado: título grande + fila de accesos -->
-  <section class="hero container" aria-labelledby="hero-title">
-    <h1 id="hero-title" class="display">Gisus</h1>
-    <p class="lead hero-lead">Conoce a quien tienes cerca.</p>
-    <div class="hero-cta">
-      <a class="btn" href={APP_STORE_URL} rel="noopener">Descargar en la App Store</a>
-      <a href="#como-funciona" class="link-more">Cómo funciona</a>
+  <!-- Encabezado: título, descarga y la app en tres pantallas -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="container hero-copy">
+      <h1 id="hero-title" class="display">Gisus</h1>
+      <p class="hero-lead">Conoce a quien tienes cerca.</p>
+      <p class="hero-sub">Enciende tu radar, haz match con quien te interesa y únete a planes en tu zona.</p>
+      <div class="hero-cta">
+        <a class="btn" href={APP_STORE_URL} rel="noopener">Descargar en la App Store</a>
+        <a href="#como-funciona" class="link-more">Cómo funciona</a>
+      </div>
     </div>
 
-    <ul class="chips" aria-label="Funciones">
-      {chips.map((c) => (
-        <li>
-          <a href={c.href}>
-            <Image src={c.img} alt="" width={64} height={64} widths={[64, 128]} sizes="64px" />
-            <span>{c.label}</span>
-          </a>
-        </li>
+    <div class="phones" role="list">
+      {screens.map((sc) => (
+        <figure class={`phone phone-${sc.pos}`} role="listitem">
+          <div class="phone-frame">
+            <Image
+              src={sc.img}
+              alt={sc.alt}
+              widths={[320, 480, 640, 960]}
+              sizes={sc.pos === 'center' ? '(max-width: 734px) 62vw, 320px' : '(max-width: 734px) 48vw, 270px'}
+              loading="eager"
+              fetchpriority={sc.pos === 'center' ? 'high' : 'auto'}
+            />
+          </div>
+          <figcaption>{sc.caption}</figcaption>
+        </figure>
       ))}
-    </ul>
+    </div>
+
+    <div class="container">
+      <ul class="chips" aria-label="Funciones">
+        {chips.map((c) => (
+          <li>
+            <a href={c.href}>
+              <Image src={c.img} alt="" width={64} height={64} widths={[64, 128]} sizes="64px" />
+              <span>{c.label}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
   </section>
 
   <!-- Galería de funciones -->
@@ -184,12 +221,92 @@ const appJsonLd = {
 
 <style>
   /* ---------- Encabezado ---------- */
-  .hero { padding: 96px 0 72px; }
-  .hero-lead { color: var(--text); margin-top: 12px; }
-  .hero-cta { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; margin-top: 28px; font-size: 19px; }
+  .hero {
+    padding: 88px 0 72px;
+    overflow: hidden;
+    /* Resplandor rosa detrás de los teléfonos */
+    background:
+      radial-gradient(60% 42% at 50% 72%, rgba(255, 46, 126, 0.16) 0%, rgba(255, 46, 126, 0) 70%),
+      var(--bg);
+  }
+  .hero-copy { text-align: center; }
+  .hero-lead {
+    font-size: clamp(28px, 4vw, 40px);
+    line-height: 1.1;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin: 10px 0 0;
+    background: var(--pink-grad);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .hero-sub {
+    font-size: clamp(17px, 1.8vw, 21px);
+    line-height: 1.38;
+    color: var(--text-2);
+    max-width: 34em;
+    margin: 16px auto 0;
+  }
+  .hero-cta { display: flex; justify-content: center; align-items: center; gap: 24px; flex-wrap: wrap; margin-top: 28px; font-size: 19px; }
+
+  /* Tres iPhones: el del centro al frente, los laterales detrás y un poco más abajo */
+  .phones {
+    --w: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 64px auto 0;
+    padding: 0 22px;
+  }
+  .phone { margin: 0; display: flex; flex-direction: column; align-items: center; flex-shrink: 0; }
+  .phone-center { width: var(--w); z-index: 2; }
+  .phone-left,
+  .phone-right { width: calc(var(--w) * 0.86); margin-top: 56px; z-index: 1; }
+  .phone-left { margin-right: -28px; }
+  .phone-right { margin-left: -28px; }
+  .phone-left .phone-frame { transform: rotate(-4deg); }
+  .phone-right .phone-frame { transform: rotate(4deg); }
+
+  .phone-frame {
+    width: 100%;
+    /* Bisel negro con el radio de las esquinas de un iPhone */
+    padding: 3.6%;
+    border-radius: 15.5% / 7.2%;
+    background: #1d1d1f;
+    box-shadow:
+      inset 0 0 0 1.5px #3a3a3c,
+      0 2px 4px rgba(0, 0, 0, 0.08),
+      0 30px 60px -12px rgba(60, 10, 35, 0.35);
+  }
+  .phone-frame img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1206 / 2622;
+    border-radius: 12.6% / 5.8%;
+  }
+  .phone figcaption {
+    margin-top: 18px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-2);
+    letter-spacing: -0.01em;
+    text-align: center;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .phone { animation: phone-in 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+    .phone-left { animation-delay: 0.12s; }
+    .phone-right { animation-delay: 0.2s; }
+  }
+  @keyframes phone-in {
+    from { opacity: 0; translate: 0 40px; }
+    to { opacity: 1; translate: 0 0; }
+  }
 
   .chips {
     display: flex;
+    justify-content: safe center;
     gap: 40px;
     list-style: none;
     margin: 64px 0 0;
@@ -313,6 +430,16 @@ const appJsonLd = {
 
   @media (max-width: 734px) {
     .hero { padding: 56px 0 48px; }
+    /* En el celular: el del centro al frente y los laterales asoman por detrás */
+    .phones { --w: 62vw; margin-top: 44px; padding: 0; }
+    .phone-left,
+    .phone-right { width: calc(var(--w) * 0.78); margin-top: 40px; flex-shrink: 0; }
+    .phone-left { margin-right: -24vw; }
+    .phone-right { margin-left: -24vw; }
+    .phone-left .phone-frame { transform: rotate(-5deg); }
+    .phone-right .phone-frame { transform: rotate(5deg); }
+    .phone-left figcaption,
+    .phone-right figcaption { visibility: hidden; }
     .chips { gap: 28px; margin-top: 44px; }
     .card { height: 460px; padding: 24px; }
     .card-title { font-size: 24px; }
