@@ -1,0 +1,70 @@
+---
+import '../styles/global.css';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import { APP_NAME, APP_STORE_ID, APP_STORE_URL, DEFAULT_DESCRIPTION, DEFAULT_TITLE, SITE_URL } from '../config';
+
+interface Props {
+  title?: string;
+  description?: string;
+  /** Datos estructurados extra (JSON-LD) para esta página. */
+  jsonLd?: Record<string, unknown>;
+}
+
+const { title = DEFAULT_TITLE, description = DEFAULT_DESCRIPTION, jsonLd } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site ?? SITE_URL).href;
+const ogImage = new URL('/og.png', Astro.site ?? SITE_URL).href;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta name="theme-color" content="#ffffff" />
+
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <!-- Banner nativo de Safari en iPhone para abrir o descargar la app -->
+    <meta name="apple-itunes-app" content={`app-id=${APP_STORE_ID}`} />
+
+    <!-- Open Graph / redes sociales -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={APP_NAME} />
+    <meta property="og:locale" content="es_LA" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Logo de Gisus: Gisi, una mascota rosa, junto al nombre de la app" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      name: APP_NAME,
+      url: SITE_URL,
+      logo: new URL('/icon-512.png', SITE_URL).href,
+      sameAs: [APP_STORE_URL],
+    })} />
+    {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <Nav />
+    <main id="contenido">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

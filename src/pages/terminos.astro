@@ -1,0 +1,54 @@
+---
+// Borrador. Revísalo con un abogado antes de publicar.
+import Base from '../layouts/Base.astro';
+import { SUPPORT_EMAIL } from '../config';
+---
+
+<Base
+  title="Términos de uso — Gisus"
+  description="Las reglas para usar Gisus de forma segura y respetuosa."
+>
+  <article class="container prose">
+    <h1>Términos de uso</h1>
+    <p class="updated">Última actualización: 2 de octubre de 2026</p>
+
+    <p>Al usar Gisus aceptas estos términos. Si no estás de acuerdo, no uses la app.</p>
+
+    <h2>Quién puede usar Gisus</h2>
+    <p>Debes tener al menos 18 años y usar tu propia cuenta. Eres responsable de lo que hagas con ella.</p>
+
+    <h2>Suscripción</h2>
+    <p>
+      Para usar Gisus se necesita una suscripción, que se compra y se gestiona en la App Store. Se renueva
+      automáticamente salvo que la canceles al menos 24 horas antes del final del periodo, desde los ajustes
+      de tu cuenta de Apple. Los reembolsos los gestiona Apple.
+    </p>
+
+    <h2>Respeto y seguridad</h2>
+    <ul>
+      <li>Trata a los demás con respeto. No acoses, amenaces ni discrimines a nadie.</li>
+      <li>No publiques contenido sexual explícito, violento o ilegal, ni fotos de otras personas sin permiso.</li>
+      <li>No te hagas pasar por otra persona ni uses Gisus para fines comerciales o spam.</li>
+      <li>Si alguien te incomoda, bloquéalo y repórtalo desde su perfil.</li>
+    </ul>
+    <p>Podemos suspender o eliminar cuentas que incumplan estas reglas.</p>
+
+    <h2>Encuentros en persona</h2>
+    <p>
+      Gisus te ayuda a conocer gente, pero no verifica la identidad de los usuarios. Cuando quedes con
+      alguien, hazlo en lugares públicos y avisa a alguien de confianza.
+    </p>
+
+    <h2>Tu contenido</h2>
+    <p>
+      Sigues siendo dueño de lo que publicas. Nos das permiso para guardarlo y mostrarlo dentro de la app
+      solo para que Gisus funcione.
+    </p>
+
+    <h2>Cambios y contacto</h2>
+    <p>
+      Podemos actualizar estos términos y te avisaremos en la app si el cambio es importante. Para dudas,
+      escríbenos a <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>.
+    </p>
+  </article>
+</Base>

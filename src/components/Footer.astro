@@ -1,0 +1,49 @@
+---
+import { APP_STORE_URL, SUPPORT_EMAIL } from '../config';
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="container">
+    <p class="note">
+      Gisus requiere iPhone con iOS 17 o posterior y Bluetooth activado. Para usar la app se necesita una suscripción.
+      Apple, el logotipo de Apple, iPhone y App Store son marcas de Apple Inc.
+    </p>
+    <div class="row">
+      <p>Copyright © {year} Gisus. Todos los derechos reservados.</p>
+      <ul>
+        <li><a href="/privacidad">Política de privacidad</a></li>
+        <li><a href="/terminos">Términos de uso</a></li>
+        <li><a href="/soporte">Soporte</a></li>
+        <li><a href={`mailto:${SUPPORT_EMAIL}`}>Contacto</a></li>
+        <li><a href={APP_STORE_URL} rel="noopener">App Store</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: var(--bg-alt);
+    color: var(--text-2);
+    font-size: 12px;
+    line-height: 1.33;
+    letter-spacing: -0.01em;
+    padding: 20px 0 32px;
+  }
+  .note {
+    margin: 0 0 14px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--line);
+  }
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 8px 24px;
+  }
+  .row p { margin: 0; }
+  ul { display: flex; flex-wrap: wrap; list-style: none; margin: 0; padding: 0; }
+  li + li::before { content: '|'; color: var(--line); margin: 0 10px; }
+  a { color: #424245; }
+</style>

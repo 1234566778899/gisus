@@ -1,0 +1,20 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import sad from '../assets/mascot/sleeping.png';
+---
+
+<Base title="Página no encontrada — Gisus" description="Esta página no existe.">
+  <section class="container notfound">
+    <Image src={sad} alt="" width={160} height={160} widths={[160, 320]} sizes="160px" />
+    <h1 class="headline">Esta página no está cerca.</h1>
+    <p class="lead">Puede que el enlace esté mal o que la página se haya movido.</p>
+    <a class="btn" href="/">Volver al inicio</a>
+  </section>
+</Base>
+
+<style>
+  .notfound { text-align: center; padding: 100px 0 120px; display: flex; flex-direction: column; align-items: center; }
+  .notfound img { width: 160px; height: 160px; object-fit: contain; margin-bottom: 24px; }
+  .notfound .btn { margin-top: 32px; }
+</style>

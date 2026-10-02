@@ -1,0 +1,322 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import { APP_NAME, APP_STORE_URL, DEFAULT_DESCRIPTION, SITE_URL } from '../config';
+
+import appIcon from '../assets/app-icon.png';
+import waving from '../assets/mascot/waving.png';
+import scanning from '../assets/mascot/scanning.png';
+import inLove from '../assets/mascot/inLove.png';
+import inviting from '../assets/mascot/inviting.png';
+import celebrating from '../assets/mascot/celebrating.png';
+import sleeping from '../assets/mascot/sleeping.png';
+import waiting from '../assets/mascot/waiting.png';
+
+// Fila de accesos bajo el título (como la de modelos en apple.com/ipad).
+const chips = [
+  { href: '#radar', label: 'Radar', img: scanning },
+  { href: '#match', label: 'Match', img: inLove },
+  { href: '#planes', label: 'Planes', img: inviting },
+  { href: '#chat', label: 'Chat', img: celebrating },
+  { href: '#invisible', label: 'Modo invisible', img: sleeping },
+  { href: '#privacidad', label: 'Privacidad', img: waiting },
+];
+
+// Tarjetas de la galería "Conoce a Gisi."
+const cards = [
+  {
+    id: 'radar', theme: 'dark', img: scanning, eyebrow: 'Radar',
+    title: 'Mira quién está cerca. Ahora mismo.',
+    text: 'Enciende tu radar y Gisus detecta por Bluetooth a las personas a tu alrededor.',
+  },
+  {
+    id: 'match', theme: 'pink', img: inLove, eyebrow: 'Match',
+    title: 'Di que te interesa.',
+    text: 'Si el interés es mutuo, hacen match y se abre el chat.',
+  },
+  {
+    id: 'planes', theme: 'blush', img: inviting, eyebrow: 'Planes',
+    title: 'Planes en tu zona.',
+    text: 'Únete a un plan en el mapa o crea el tuyo, y conózcanse en el chat del grupo.',
+  },
+  {
+    id: 'chat', theme: 'light', img: celebrating, eyebrow: 'Chat',
+    title: 'Habla a tu manera.',
+    text: 'Fotos, notas de voz y stickers de Gisi, o crea los tuyos con tus fotos.',
+  },
+  {
+    id: 'invisible', theme: 'white', img: sleeping, eyebrow: 'Modo invisible',
+    title: 'Tú decides cuándo te ven.',
+    text: 'Apaga el radar o ponte invisible, y elige si muestras tu nombre antes del match.',
+  },
+];
+
+const steps = [
+  { n: '1', title: 'Enciende tu radar', text: 'Gisus encuentra a las personas que también lo tienen encendido cerca de ti.' },
+  { n: '2', title: 'Di que te interesa', text: 'Mira sus fotos e intereses y, si te gusta, envíale un “me interesa”.' },
+  { n: '3', title: 'Hagan match y hablen', text: 'Si es mutuo, se abre el chat para conocerse antes de verse.' },
+];
+
+const privacy = [
+  { title: 'Proximidad, no posición.', text: 'El radar sabe que alguien está cerca, no dónde. Tu ubicación no se comparte con nadie.' },
+  { title: 'Chats solo con tus matches.', text: 'Solo tú y tus matches ven sus conversaciones y fotos.' },
+  { title: 'Bloquea cuando quieras.', text: 'Bloquea o reporta a cualquiera, y deshazlo desde Configuración si fue un error.' },
+  { title: 'Tu cuenta, tus datos.', text: 'Puedes eliminar tu cuenta desde la app, con tu perfil, matches y mensajes.' },
+];
+
+const appJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'MobileApplication',
+  name: APP_NAME,
+  operatingSystem: 'iOS 17 o posterior',
+  applicationCategory: 'SocialNetworkingApplication',
+  description: DEFAULT_DESCRIPTION,
+  url: SITE_URL,
+  downloadUrl: APP_STORE_URL,
+  inLanguage: ['es', 'en'],
+};
+---
+
+<Base jsonLd={appJsonLd}>
+  <!-- Encabezado: título grande + fila de accesos -->
+  <section class="hero container" aria-labelledby="hero-title">
+    <h1 id="hero-title" class="display">Gisus</h1>
+    <p class="lead hero-lead">Conoce a quien tienes cerca.</p>
+    <div class="hero-cta">
+      <a class="btn" href={APP_STORE_URL} rel="noopener">Descargar en la App Store</a>
+      <a href="#como-funciona" class="link-more">Cómo funciona</a>
+    </div>
+
+    <ul class="chips" aria-label="Funciones">
+      {chips.map((c) => (
+        <li>
+          <a href={c.href}>
+            <Image src={c.img} alt="" width={64} height={64} widths={[64, 128]} sizes="64px" />
+            <span>{c.label}</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <!-- Galería de funciones -->
+  <section class="section section-alt" aria-labelledby="gallery-title">
+    <div class="container section-head">
+      <h2 id="gallery-title" class="headline">Conoce a Gisi.</h2>
+      <a href={APP_STORE_URL} rel="noopener" class="link-more">Descargar la app</a>
+    </div>
+
+    <div class="gallery" data-gallery>
+      <ul class="gallery-track" data-track>
+        {cards.map((c) => (
+          <li id={c.id} class={`card card-${c.theme}`}>
+            <div class="card-copy">
+              <p class="card-eyebrow">{c.eyebrow}</p>
+              <h3 class="card-title">{c.title}</h3>
+              <p class="card-text">{c.text}</p>
+            </div>
+            <Image class="card-img" src={c.img} alt="" width={260} height={260} widths={[260, 520]} sizes="260px" />
+          </li>
+        ))}
+      </ul>
+      <div class="paddles container">
+        <button type="button" class="paddle" data-prev aria-label="Anterior">‹</button>
+        <button type="button" class="paddle" data-next aria-label="Siguiente">›</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cómo funciona -->
+  <section id="como-funciona" class="section" aria-labelledby="steps-title">
+    <div class="container">
+      <h2 id="steps-title" class="headline">Así de fácil.</h2>
+      <ol class="steps">
+        {steps.map((s) => (
+          <li>
+            <span class="step-n" aria-hidden="true">{s.n}</span>
+            <h3 class="title">{s.title}</h3>
+            <p class="body-2">{s.text}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <!-- Privacidad -->
+  <section id="privacidad" class="section section-alt" aria-labelledby="privacy-title">
+    <div class="container">
+      <p class="eyebrow">Privacidad</p>
+      <h2 id="privacy-title" class="headline">Cerca, pero a tu ritmo.</h2>
+      <ul class="privacy">
+        {privacy.map((p) => (
+          <li>
+            <h3>{p.title}</h3>
+            <p>{p.text}</p>
+          </li>
+        ))}
+      </ul>
+      <a href="/privacidad" class="link-more more">Lee nuestra política de privacidad</a>
+    </div>
+  </section>
+
+  <!-- Descarga -->
+  <section class="section download" aria-labelledby="download-title">
+    <div class="container download-inner">
+      <Image src={appIcon} alt="Ícono de Gisus" class="download-icon" width={128} height={128} widths={[128, 256]} sizes="128px" />
+      <h2 id="download-title" class="headline">Descarga Gisus.</h2>
+      <p class="lead">Disponible para iPhone en la App Store.</p>
+      <a class="btn btn-dark" href={APP_STORE_URL} rel="noopener">Descargar en la App Store</a>
+      <Image src={waving} alt="" class="download-mascot" width={140} height={140} widths={[140, 280]} sizes="140px" />
+    </div>
+  </section>
+</Base>
+
+<script>
+  // Flechas de la galería: desplazan una tarjeta (sin JS se puede deslizar igual).
+  document.querySelectorAll<HTMLElement>('[data-gallery]').forEach((g) => {
+    const track = g.querySelector<HTMLElement>('[data-track]');
+    if (!track) return;
+    const step = () => (track.querySelector('li')?.getBoundingClientRect().width ?? 300) + 20;
+    g.querySelector('[data-prev]')?.addEventListener('click', () => track.scrollBy({ left: -step(), behavior: 'smooth' }));
+    g.querySelector('[data-next]')?.addEventListener('click', () => track.scrollBy({ left: step(), behavior: 'smooth' }));
+  });
+</script>
+
+<style>
+  /* ---------- Encabezado ---------- */
+  .hero { padding: 96px 0 72px; }
+  .hero-lead { color: var(--text); margin-top: 12px; }
+  .hero-cta { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; margin-top: 28px; font-size: 19px; }
+
+  .chips {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+    margin: 64px 0 0;
+    padding: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .chips::-webkit-scrollbar { display: none; }
+  .chips a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    color: var(--text);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: -0.016em;
+    white-space: nowrap;
+  }
+  .chips a:hover { color: var(--link); text-decoration: none; }
+  .chips img { width: 64px; height: 64px; object-fit: contain; transition: transform 0.2s ease; }
+  .chips a:hover img { transform: translateY(-3px); }
+
+  /* ---------- Galería ---------- */
+  .gallery-track {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 4px max(22px, calc((100vw - var(--content)) / 2)) 24px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: max(22px, calc((100vw - var(--content)) / 2));
+    scrollbar-width: none;
+  }
+  .gallery-track::-webkit-scrollbar { display: none; }
+
+  .card {
+    position: relative;
+    flex: 0 0 min(372px, 82vw);
+    height: 500px;
+    border-radius: var(--radius-card);
+    padding: 30px;
+    overflow: hidden;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .card:hover { transform: scale(1.01); box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.12); }
+  .card-eyebrow { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; margin: 0 0 8px; opacity: 0.8; }
+  .card-title { font-size: 28px; line-height: 1.14; font-weight: 700; margin: 0; letter-spacing: 0.007em; }
+  .card-text { font-size: 17px; margin: 10px 0 0; opacity: 0.85; }
+  .card-img { width: 230px; height: 230px; object-fit: contain; align-self: center; margin-bottom: -6px; }
+
+  .card-dark { background: radial-gradient(120% 80% at 50% 100%, #4a0f2a 0%, #000 60%); color: #f5f5f7; }
+  .card-dark .card-eyebrow { color: #ff6ba3; opacity: 1; }
+  .card-pink { background: var(--pink-grad); color: #fff; }
+  .card-blush { background: #ffe1ec; color: var(--text); }
+  .card-blush .card-eyebrow { color: var(--pink-deep); opacity: 1; }
+  .card-light { background: #e8e8ed; color: var(--text); }
+  .card-white { background: #fff; color: var(--text); }
+
+  .paddles { display: flex; justify-content: flex-end; gap: 14px; margin-top: 8px; }
+  .paddle {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 0;
+    background: rgba(210, 210, 215, 0.64);
+    color: rgba(0, 0, 0, 0.56);
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+  }
+  .paddle:hover { background: rgba(223, 223, 227, 0.7); color: rgba(0, 0, 0, 0.64); }
+
+  /* ---------- Pasos ---------- */
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    list-style: none;
+    margin: 56px 0 0;
+    padding: 0;
+  }
+  .step-n {
+    display: inline-grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--pink-grad);
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 18px;
+  }
+  .steps .title { font-size: 24px; }
+
+  /* ---------- Privacidad ---------- */
+  .privacy {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    list-style: none;
+    margin: 48px 0 32px;
+    padding: 0;
+  }
+  .privacy li { background: #fff; border-radius: 18px; padding: 28px; }
+  .privacy h3 { font-size: 21px; line-height: 1.19; margin: 0 0 8px; }
+  .privacy p { margin: 0; color: var(--text-2); }
+  .more { font-size: 19px; }
+
+  /* ---------- Descarga ---------- */
+  .download { text-align: center; overflow: hidden; }
+  .download-inner { display: flex; flex-direction: column; align-items: center; position: relative; }
+  .download-icon { width: 128px; height: 128px; border-radius: 28px; box-shadow: 0 10px 30px rgba(255, 46, 126, 0.3); margin-bottom: 28px; }
+  .download .btn { margin-top: 28px; }
+  .download-mascot { width: 140px; height: 140px; object-fit: contain; margin-top: 48px; }
+
+  @media (max-width: 734px) {
+    .hero { padding: 56px 0 48px; }
+    .chips { gap: 28px; margin-top: 44px; }
+    .card { height: 460px; padding: 24px; }
+    .card-title { font-size: 24px; }
+    .steps, .privacy { grid-template-columns: 1fr; }
+    .paddles { display: none; }
+  }
+</style>

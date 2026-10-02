@@ -1,0 +1,77 @@
+---
+import { Image } from 'astro:assets';
+import logo from '../assets/logo.png';
+import { APP_STORE_URL } from '../config';
+
+// Barra global estilo apple.com: delgada, translúcida y fija arriba.
+const links = [
+  { href: '/#radar', label: 'Radar' },
+  { href: '/#planes', label: 'Planes' },
+  { href: '/#como-funciona', label: 'Cómo funciona' },
+  { href: '/#privacidad', label: 'Privacidad' },
+  { href: '/soporte', label: 'Soporte' },
+];
+---
+
+<header class="globalnav">
+  <nav class="globalnav-inner" aria-label="Principal">
+    <a href="/" class="brand" aria-label="Gisus, inicio">
+      <Image src={logo} alt="" height={26} widths={[66, 132]} sizes="66px" loading="eager" />
+    </a>
+    <ul class="links">
+      {links.map((l) => (
+        <li><a href={l.href}>{l.label}</a></li>
+      ))}
+    </ul>
+    <a class="get" href={APP_STORE_URL} rel="noopener">Descargar</a>
+  </nav>
+</header>
+
+<style>
+  .globalnav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    height: var(--nav-h);
+    background: rgba(251, 251, 253, 0.8);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  }
+  .globalnav-inner {
+    width: min(100% - 44px, var(--content));
+    height: 100%;
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .brand { display: flex; align-items: center; }
+  .links {
+    display: flex;
+    gap: clamp(16px, 4vw, 44px);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .links a,
+  .get {
+    font-size: 12px;
+    letter-spacing: -0.01em;
+    color: rgba(0, 0, 0, 0.8);
+  }
+  .links a:hover { color: #000; text-decoration: none; }
+  .get {
+    background: var(--link);
+    color: #fff;
+    padding: 4px 12px;
+    border-radius: 980px;
+  }
+  .get:hover { background: #0077ed; text-decoration: none; }
+
+  /* En pantallas angostas solo se ven el logo y "Descargar" (como apple.com). */
+  @media (max-width: 734px) {
+    .links { display: none; }
+  }
+</style>

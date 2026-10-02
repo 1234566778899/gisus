@@ -1,0 +1,83 @@
+---
+import Base from '../layouts/Base.astro';
+import { SUPPORT_EMAIL } from '../config';
+
+const faqs = [
+  {
+    q: 'No veo a nadie en el radar.',
+    a: 'Revisa que el radar esté encendido y que Gisus tenga permiso de Bluetooth en Ajustes del iPhone. Solo aparecen personas cercanas que también tengan el radar encendido.',
+  },
+  {
+    q: '¿Gisus comparte mi ubicación?',
+    a: 'No. El radar detecta proximidad por Bluetooth, no tu posición. La ubicación solo se usa en tu teléfono para centrar el mapa de planes.',
+  },
+  {
+    q: '¿Cómo cambio o borro mis fotos?',
+    a: 'En Configuración toca “Editar”. Toca una foto para cambiarla o mantenla presionada para hacerla principal o eliminarla.',
+  },
+  {
+    q: 'Bloqueé u oculté a alguien por error.',
+    a: 'Ve a Configuración → Bloqueadas y ocultas y toca “Desbloquear” o “Mostrar”.',
+  },
+  {
+    q: '¿Cómo cancelo mi suscripción?',
+    a: 'Desde los ajustes de tu iPhone: toca tu nombre → Suscripciones → Gisus. La gestiona Apple.',
+  },
+  {
+    q: '¿Cómo elimino mi cuenta?',
+    a: 'En la app, ve a Configuración → Eliminar cuenta. Se borran tu perfil, tus matches y tus mensajes.',
+  },
+];
+---
+
+<Base
+  title="Soporte — Gisus"
+  description="Respuestas a las preguntas frecuentes sobre Gisus y cómo contactarnos."
+  jsonLd={{
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  }}
+>
+  <article class="container prose">
+    <h1>Soporte</h1>
+    <p class="updated">¿Necesitas ayuda? Aquí están las dudas más comunes.</p>
+
+    <div class="faq">
+      {faqs.map((f) => (
+        <details>
+          <summary>{f.q}</summary>
+          <p>{f.a}</p>
+        </details>
+      ))}
+    </div>
+
+    <h2>¿Sigues con dudas?</h2>
+    <p>
+      Escríbenos a <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a> y te responderemos lo antes posible.
+      Si es sobre la seguridad de alguien, repórtalo también desde su perfil en la app.
+    </p>
+  </article>
+</Base>
+
+<style>
+  .faq { border-top: 1px solid var(--line); }
+  details { border-bottom: 1px solid var(--line); padding: 18px 0; }
+  summary {
+    cursor: pointer;
+    font-size: 19px;
+    font-weight: 600;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: '+'; color: var(--link); font-weight: 400; font-size: 24px; line-height: 1; }
+  details[open] summary::after { content: '−'; }
+  details p { margin: 12px 0 0; color: var(--text-2); }
+</style>
