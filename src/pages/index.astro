@@ -29,7 +29,7 @@ const chips = [
 // El orden es el visual: izquierda, centro (al frente) y derecha.
 const screens = [
   { pos: 'left', img: screenPlans, caption: 'Planes en el mapa',
-    alt: 'Pantalla Planes de Gisus: un mapa con planes cercanos, como un café, una rodada en bici y una expo.' },
+    alt: 'Pantalla Planes de Gisus: un mapa con planes cercanos, cada uno con su nombre y categoría, como un café, una rodada en bici y una expo.' },
   { pos: 'center', img: screenNearby, caption: 'Radar de quién está cerca',
     alt: 'Pantalla Cerca de ti de Gisus: el radar muestra a ocho personas cerca, con su distancia aproximada.' },
   { pos: 'right', img: screenChat, caption: 'Chat con tus matches',
@@ -87,7 +87,7 @@ const appJsonLd = {
   description: DEFAULT_DESCRIPTION,
   url: SITE_URL,
   downloadUrl: APP_STORE_URL,
-  inLanguage: ['es', 'en'],
+  inLanguage: ['es', 'en', 'pt-BR', 'fr', 'de'],
 };
 ---
 
@@ -202,6 +202,7 @@ const appJsonLd = {
       <Image src={appIcon} alt="Ícono de Gisus" class="download-icon" width={128} height={128} widths={[128, 256]} sizes="128px" />
       <h2 id="download-title" class="headline">Descarga Gisus.</h2>
       <p class="lead">Disponible para iPhone en la App Store.</p>
+      <p class="langs">En español, inglés, portugués, francés y alemán.</p>
       <a class="btn btn-dark" href={APP_STORE_URL} rel="noopener">Descargar en la App Store</a>
       <Image src={waving} alt="" class="download-mascot" width={140} height={140} widths={[140, 280]} sizes="140px" />
     </div>
@@ -283,7 +284,7 @@ const appJsonLd = {
     display: block;
     width: 100%;
     height: auto;
-    aspect-ratio: 1206 / 2622;
+    aspect-ratio: 1320 / 2868;
     border-radius: 12.6% / 5.8%;
   }
   .phone figcaption {
@@ -426,6 +427,7 @@ const appJsonLd = {
   .download-inner { display: flex; flex-direction: column; align-items: center; position: relative; }
   .download-icon { width: 128px; height: 128px; border-radius: 28px; box-shadow: 0 10px 30px rgba(255, 46, 126, 0.3); margin-bottom: 28px; }
   .download .btn { margin-top: 28px; }
+  .langs { margin: 8px 0 0; color: var(--text-2); font-size: 17px; }
   .download-mascot { width: 140px; height: 140px; object-fit: contain; margin-top: 48px; }
 
   @media (max-width: 734px) {
