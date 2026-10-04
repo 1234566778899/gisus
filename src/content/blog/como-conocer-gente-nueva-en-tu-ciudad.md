@@ -20,7 +20,7 @@ Una clase de baile, un club de lectura, un equipo de fútbol amateur o un taller
 
 ## 3. Di que sí a los planes de grupo
 
-Los planes en grupo quitan presión: no tienes que sostener la conversación tú solo y siempre hay algo que hacer. En Gisus, la pestaña **Planes** muestra en un mapa actividades cerca de ti, como cafés, rodadas, picnics o noches de salsa, y quienes se unen comparten un chat de grupo para organizarse.
+Los planes en grupo quitan presión: no tienes que sostener la conversación tú solo y siempre hay algo que hacer. En Gisi, la pestaña **Planes** muestra en un mapa actividades cerca de ti, como cafés, rodadas, picnics o noches de salsa, y quienes se unen comparten un chat de grupo para organizarse.
 
 ## 4. Crea tú el plan
 
@@ -28,7 +28,7 @@ Si no encuentras el plan que buscas, propónlo. "Voy a probar el café nuevo de 
 
 ## 5. Aprovecha los lugares donde ya estás
 
-Muchas conexiones posibles están a unos metros: en la biblioteca, en un concierto o en un coworking. El problema es que no sabes si la otra persona también quiere conocer gente. Para eso existe el **radar de Gisus**: te muestra quién está cerca y con el radar encendido, y qué busca (amistad, citas o networking), sin revelar la ubicación de nadie.
+Muchas conexiones posibles están a unos metros: en la biblioteca, en un concierto o en un coworking. El problema es que no sabes si la otra persona también quiere conocer gente. Para eso existe el **radar de Gisi**: te muestra quién está cerca y con el radar encendido, y qué busca (amistad, citas o networking), sin revelar la ubicación de nadie.
 
 ## 6. Haz voluntariado
 
@@ -44,4 +44,4 @@ Se necesitan muchas horas compartidas para pasar de conocido a amigo cercano. No
 
 ## En resumen
 
-Conocer gente nueva en tu ciudad es más fácil cuando combinas **constancia** (volver a los mismos lugares), **planes en grupo** y un poco de **iniciativa**. Y si quieres saber quién está cerca y abierto a conocer gente, enciende tu radar en Gisus.
+Conocer gente nueva en tu ciudad es más fácil cuando combinas **constancia** (volver a los mismos lugares), **planes en grupo** y un poco de **iniciativa**. Y si quieres saber quién está cerca y abierto a conocer gente, enciende tu radar en Gisi.

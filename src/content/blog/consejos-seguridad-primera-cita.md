@@ -12,11 +12,11 @@ Conocer en persona a alguien con quien hiciste match es emocionante. También es
 
 ### 1. Platiquen primero en el chat
 
-Unos días de conversación te ayudan a saber si hay química y si la otra persona es coherente con lo que dice su perfil. En Gisus, el chat se abre cuando hay match, y ahí pueden mandarse fotos o notas de voz. Escuchar su voz antes de verse da bastante confianza.
+Unos días de conversación te ayudan a saber si hay química y si la otra persona es coherente con lo que dice su perfil. En Gisi, el chat se abre cuando hay match, y ahí pueden mandarse fotos o notas de voz. Escuchar su voz antes de verse da bastante confianza.
 
 ### 2. Elige un lugar público y concurrido
 
-Un café, un restaurante, un parque con gente o una expo. Evita lugares aislados y las casas en una primera cita. Si usan los **Planes** de Gisus, los encuentros siempre son en un lugar público que se elige al crear el plan.
+Un café, un restaurante, un parque con gente o una expo. Evita lugares aislados y las casas en una primera cita. Si usan los **Planes** de Gisi, los encuentros siempre son en un lugar público que se elige al crear el plan.
 
 ### 3. Llega y vete por tu cuenta
 
@@ -52,10 +52,10 @@ Si no hubo química, está bien decirlo con amabilidad. Y si la otra persona no 
 
 ### 10. Usa las herramientas de la app
 
-Si alguien te hizo sentir incómodo o se comportó de forma inapropiada, **bloquéalo y repórtalo** desde su ficha. En Gisus eso hace que deje de aparecer para ti, y si te equivocas puedes deshacerlo en Configuración → Bloqueadas y ocultas. También puedes eliminar un match en cualquier momento.
+Si alguien te hizo sentir incómodo o se comportó de forma inapropiada, **bloquéalo y repórtalo** desde su ficha. En Gisi eso hace que deje de aparecer para ti, y si te equivocas puedes deshacerlo en Configuración → Bloqueadas y ocultas. También puedes eliminar un match en cualquier momento.
 
 ## Un detalle de privacidad
 
-Una preocupación común con las apps de proximidad es que alguien sepa dónde vives. El radar de Gisus funciona por Bluetooth: detecta que alguien está cerca, pero **no comparte la ubicación de nadie**, y además puedes apagar el radar o activar el modo invisible cuando quieras.
+Una preocupación común con las apps de proximidad es que alguien sepa dónde vives. El radar de Gisi funciona por Bluetooth: detecta que alguien está cerca, pero **no comparte la ubicación de nadie**, y además puedes apagar el radar o activar el modo invisible cuando quieras.
 
 La mejor primera cita es aquella a la que llegas tranquilo. Con estas precauciones, lo único de lo que tendrás que preocuparte es de qué platicar.

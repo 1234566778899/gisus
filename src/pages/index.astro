@@ -28,11 +28,11 @@ const chips = [
 // El orden es el visual: izquierda, centro (al frente) y derecha.
 const screens = [
   { pos: 'left', img: screenPlans, caption: 'Planes en el mapa',
-    alt: 'Pantalla Planes de Gisus: un mapa con planes cercanos, cada uno con su nombre y categoría, como un café, una rodada en bici y una expo.' },
+    alt: 'Pantalla Planes de Gisi: un mapa con planes cercanos, cada uno con su nombre y categoría, como un café, una rodada en bici y una expo.' },
   { pos: 'center', img: screenNearby, caption: 'Radar de quién está cerca',
-    alt: 'Pantalla Cerca de ti de Gisus: el radar muestra a ocho personas cerca, con su distancia aproximada.' },
+    alt: 'Pantalla Cerca de ti de Gisi: el radar muestra a ocho personas cerca, con su distancia aproximada.' },
   { pos: 'right', img: screenChat, caption: 'Chat con tus conexiones',
-    alt: 'Chat de Gisus entre dos personas que conectaron: mensajes para quedar en un plan de café y un sticker de Gisi.' },
+    alt: 'Chat de Gisi entre dos personas que conectaron: mensajes para quedar en un plan de café y un sticker de la mascota.' },
 ];
 
 // Tarjetas de la galería "Conoce a Gisi."
@@ -40,7 +40,7 @@ const cards = [
   {
     id: 'radar', theme: 'dark', img: scanning, eyebrow: 'Radar',
     title: 'Mira quién está cerca. Ahora mismo.',
-    text: 'Enciende tu radar y Gisus detecta por Bluetooth a las personas a tu alrededor.',
+    text: 'Enciende tu radar y Gisi detecta por Bluetooth a las personas a tu alrededor.',
   },
   {
     id: 'conecta', theme: 'pink', img: waving, eyebrow: 'Amistad · Networking · Citas',
@@ -65,7 +65,7 @@ const cards = [
 ];
 
 const steps = [
-  { n: '1', title: 'Enciende tu radar', text: 'Gisus encuentra a las personas que también lo tienen encendido cerca de ti.' },
+  { n: '1', title: 'Enciende tu radar', text: 'Gisi encuentra a las personas que también lo tienen encendido cerca de ti.' },
   { n: '2', title: 'Mira qué busca', text: 'Cada perfil dice si busca amistad, networking o citas. Revisa sus fotos e intereses.' },
   { n: '3', title: 'Conecten y hablen', text: 'Si el interés es mutuo, se abre el chat para conocerse antes de verse.' },
 ];
@@ -94,7 +94,7 @@ const appJsonLd = {
   <!-- Encabezado: título, descarga y la app en tres pantallas -->
   <section class="hero" aria-labelledby="hero-title">
     <div class="container hero-copy">
-      <h1 id="hero-title" class="display">Gisus</h1>
+      <h1 id="hero-title" class="display">Gisi</h1>
       <p class="hero-lead">Conoce a quien tienes cerca.</p>
       <p class="hero-sub">Enciende tu radar y haz amigos, networking o encuentra una cita con quien está a unos metros. Y únete a planes en tu zona.</p>
       <div class="hero-cta">
@@ -198,8 +198,8 @@ const appJsonLd = {
   <!-- Descarga -->
   <section class="section download" aria-labelledby="download-title">
     <div class="container download-inner">
-      <Image src={appIcon} alt="Ícono de Gisus" class="download-icon" width={128} height={128} widths={[128, 256]} sizes="128px" />
-      <h2 id="download-title" class="headline">Descarga Gisus.</h2>
+      <Image src={appIcon} alt="Ícono de Gisi" class="download-icon" width={128} height={128} widths={[128, 256]} sizes="128px" />
+      <h2 id="download-title" class="headline">Descarga Gisi.</h2>
       <p class="lead">Disponible para iPhone en la App Store.</p>
       <p class="langs">En español, inglés, portugués, francés y alemán.</p>
       <a class="btn btn-dark" href={APP_STORE_URL} rel="noopener">Descargar en la App Store</a>

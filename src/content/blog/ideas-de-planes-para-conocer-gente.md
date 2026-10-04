@@ -6,7 +6,7 @@ mascot: inviting
 tags: ['planes', 'conocer gente', 'ideas']
 ---
 
-La forma más fácil de conocer a alguien es haciendo algo juntos. Un buen plan da tema de conversación, quita la presión de "tener que caer bien" y permite que la gente se conozca a su ritmo. Estas son doce ideas, agrupadas como las categorías de planes de Gisus.
+La forma más fácil de conocer a alguien es haciendo algo juntos. Un buen plan da tema de conversación, quita la presión de "tener que caer bien" y permite que la gente se conozca a su ritmo. Estas son doce ideas, agrupadas como las categorías de planes de Gisi.
 
 ## Café
 
@@ -53,6 +53,6 @@ La forma más fácil de conocer a alguien es haciendo algo juntos. Un buen plan 
 - **Pon un cupo.** Entre 4 y 10 personas es un buen rango para que todos platiquen.
 - **Crea un espacio para organizarse.** Así se resuelven dudas antes del día.
 
-En Gisus puedes crear un plan en el mapa con su categoría, lugar, hora y cupo. Quienes se unen entran a un **chat de grupo** para conocerse antes de verse, y el lugar que se guarda es el sitio público del plan, nunca tu ubicación.
+En Gisi puedes crear un plan en el mapa con su categoría, lugar, hora y cupo. Quienes se unen entran a un **chat de grupo** para conocerse antes de verse, y el lugar que se guarda es el sitio público del plan, nunca tu ubicación.
 
 ¿No encuentras un plan que te guste? Créalo. Es muy probable que alguien cerca de ti esté buscando exactamente lo mismo.

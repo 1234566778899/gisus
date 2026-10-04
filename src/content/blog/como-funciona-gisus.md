@@ -1,13 +1,13 @@
 ---
-title: '¿Cómo funciona Gisus? El radar por Bluetooth, explicado'
-description: 'Qué detecta el radar de Gisus, por qué no comparte tu ubicación, cómo conectas con alguien (para amistad, networking o citas) y qué controlas tú. Todo explicado paso a paso.'
+title: '¿Cómo funciona Gisi? El radar por Bluetooth, explicado'
+description: 'Qué detecta el radar de Gisi, por qué no comparte tu ubicación, cómo conectas con alguien (para amistad, networking o citas) y qué controlas tú. Todo explicado paso a paso.'
 pubDate: 2026-10-02
 mascot: scanning
 featured: true
-tags: ['Gisus', 'privacidad', 'radar']
+tags: ['Gisi', 'privacidad', 'radar']
 ---
 
-Gisus parte de una idea sencilla: las personas con las que podrías conectar muchas veces están a unos metros de ti, en el mismo café, el mismo evento o la misma biblioteca, y nunca se enteran. El radar de Gisus está hecho para eso: mostrarte **quién está cerca ahora mismo**, sin revelar dónde estás.
+Gisi parte de una idea sencilla: las personas con las que podrías conectar muchas veces están a unos metros de ti, en el mismo café, el mismo evento o la misma biblioteca, y nunca se enteran. El radar de Gisi está hecho para eso: mostrarte **quién está cerca ahora mismo**, sin revelar dónde estás.
 
 Aquí te contamos cómo funciona por dentro y qué decides tú en cada paso.
 
@@ -21,7 +21,7 @@ Lo importante es lo que **no** hace:
 - **No muestra una distancia exacta.** Con la intensidad de la señal, la app estima si alguien está "en el mismo lugar" o "en la zona", con una distancia aproximada.
 - **No comparte un identificador fijo.** Tu teléfono anuncia un ID anónimo que cambia cada 15 minutos, así que nadie puede seguirte por él.
 
-> En pocas palabras: Gisus sabe que alguien está cerca, no dónde está.
+> En pocas palabras: Gisi sabe que alguien está cerca, no dónde está.
 
 ## Del radar a la conexión
 
@@ -36,7 +36,7 @@ Si alguien no es para ti, toca la **X** ("No me interesa") y deja de aparecerte.
 
 ## Qué controlas tú
 
-La privacidad de Gisus no depende de que confíes en nadie: depende de ajustes que tú manejas.
+La privacidad de Gisi no depende de que confíes en nadie: depende de ajustes que tú manejas.
 
 - **Apaga el radar** cuando quieras. Sin radar, nadie te detecta.
 - **Modo invisible**: en Configuración puedes dejar de aparecer en el radar de los demás.
@@ -56,6 +56,6 @@ Cuando conectan, el chat ofrece sugerencias para romper el hielo y deja enviar *
 
 ## Lo que necesitas
 
-Gisus funciona en iPhone con iOS 17 o posterior y necesita el Bluetooth activado. Para usar la app se requiere una suscripción, que se gestiona desde los ajustes de tu iPhone.
+Gisi funciona en iPhone con iOS 17 o posterior y necesita el Bluetooth activado. Para usar la app se requiere una suscripción, que se gestiona desde los ajustes de tu iPhone.
 
 ¿Listo para ver quién está cerca? Enciende tu radar en tu próximo café.

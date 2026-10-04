@@ -17,11 +17,11 @@ Revisa su perfil: intereses, lo que busca y su bio. Un mensaje que muestra que l
 - "¡Hola! Vi que también te gusta el café. ¿Cuál es tu lugar favorito por aquí?"
 - "Senderismo y fotografía, buena combinación. ¿Cuál fue tu última ruta?"
 
-En Gisus, al abrir un chat nuevo aparecen **sugerencias para romper el hielo** basadas en lo que tienen en común. Puedes usarlas tal cual o como punto de partida.
+En Gisi, al abrir un chat nuevo aparecen **sugerencias para romper el hielo** basadas en lo que tienen en común. Puedes usarlas tal cual o como punto de partida.
 
 ### Aprovecha que están cerca
 
-Con Gisus se conocieron porque estaban cerca, y eso da un tema que otras apps no tienen: "¿También vienes seguido a esta zona?" es un inicio natural.
+Con Gisi se conocieron porque estaban cerca, y eso da un tema que otras apps no tienen: "¿También vienes seguido a esta zona?" es un inicio natural.
 
 ### Haz preguntas abiertas
 
