@@ -1,0 +1,35 @@
+---
+// Página pública para pedir el borrado de la cuenta (la pide Google Play).
+import Base from '../layouts/Base.astro';
+import { SUPPORT_EMAIL } from '../config';
+---
+
+<Base
+  title="Eliminar tu cuenta — Gisi"
+  description="Cómo eliminar tu cuenta de Gisi y qué datos se borran."
+>
+  <article class="container prose">
+    <h1>Eliminar tu cuenta de Gisi</h1>
+    <p class="updated">Última actualización: 4 de octubre de 2026</p>
+
+    <h2>Desde la app</h2>
+    <ol>
+      <li>Abre Gisi e inicia sesión.</li>
+      <li>Ve a <strong>Configuración</strong>.</li>
+      <li>Toca <strong>Eliminar cuenta</strong> y confírmalo.</li>
+    </ol>
+
+    <h2>Sin la app</h2>
+    <p>
+      Escríbenos a <a href={`mailto:${SUPPORT_EMAIL}?subject=Eliminar%20mi%20cuenta`}>{SUPPORT_EMAIL}</a> desde
+      el correo con el que creaste tu cuenta (o el de tu cuenta de Google o Apple) con el asunto
+      “Eliminar mi cuenta”. La eliminamos en un plazo máximo de 30 días y te avisamos cuando esté hecho.
+    </p>
+
+    <h2>Qué se borra</h2>
+    <p>
+      Se borran tu perfil (con tus fotos), tus conexiones y tus mensajes. Los planes se borran solos unos días
+      después de su fecha.
+    </p>
+  </article>
+</Base>

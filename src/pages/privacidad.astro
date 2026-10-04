@@ -10,7 +10,7 @@ import { SUPPORT_EMAIL } from '../config';
 >
   <article class="container prose">
     <h1>Política de privacidad</h1>
-    <p class="updated">Última actualización: 2 de octubre de 2026</p>
+    <p class="updated">Última actualización: 4 de octubre de 2026</p>
 
     <p>
       Gisi es una app para conocer a personas que están cerca de ti. Esta política explica qué datos
@@ -20,7 +20,7 @@ import { SUPPORT_EMAIL } from '../config';
 
     <h2>Datos que nos das</h2>
     <ul>
-      <li><strong>Cuenta:</strong> inicias sesión con Apple o con Google. Recibimos un identificador de cuenta y, si lo autorizas, tu correo.</li>
+      <li><strong>Cuenta:</strong> inicias sesión con Apple (en iPhone), con Google o con tu correo y una contraseña. Recibimos un identificador de cuenta y tu correo.</li>
       <li><strong>Perfil:</strong> nombre o apodo, edad, bio, intereses, qué buscas y tus fotos.</li>
       <li><strong>Actividad:</strong> a quién le dices que te interesa, tus conexiones, los planes que creas o a los que te unes, y las personas que bloqueas, ocultas o reportas.</li>
       <li><strong>Mensajes:</strong> textos, fotos, notas de voz y stickers que envías en los chats.</li>
@@ -28,7 +28,7 @@ import { SUPPORT_EMAIL } from '../config';
 
     <h2>Bluetooth y radar</h2>
     <p>
-      Cuando enciendes el radar, tu iPhone anuncia por Bluetooth un identificador temporal que cambia
+      Cuando enciendes el radar, tu teléfono anuncia por Bluetooth un identificador temporal que cambia
       con frecuencia y no revela quién eres. Así Gisi sabe qué personas están cerca, pero no dónde están.
       Puedes apagar el radar o ponerte invisible en cualquier momento.
     </p>
@@ -56,15 +56,15 @@ import { SUPPORT_EMAIL } from '../config';
     <h2>Proveedores</h2>
     <ul>
       <li><strong>Supabase:</strong> aloja la base de datos, los archivos y el inicio de sesión.</li>
-      <li><strong>Apple:</strong> inicio de sesión con Apple, notificaciones push y pagos de la suscripción.</li>
-      <li><strong>Google:</strong> inicio de sesión con Google, si lo eliges.</li>
+      <li><strong>Apple:</strong> inicio de sesión con Apple, notificaciones push en iPhone y pagos de la suscripción en iPhone.</li>
+      <li><strong>Google:</strong> inicio de sesión con Google, si lo eliges; notificaciones push en Android (Firebase Cloud Messaging) y el mapa de planes en Android (Google Maps).</li>
     </ul>
     <p>No vendemos tus datos ni los compartimos con anunciantes.</p>
 
     <h2>Notificaciones</h2>
     <p>
       Si las permites, guardamos el token de tu dispositivo para avisarte de likes, conexiones, mensajes y
-      planes. Puedes desactivarlas en los ajustes de tu iPhone.
+      planes. Puedes desactivarlas en los ajustes de tu teléfono.
     </p>
 
     <h2>Cuánto tiempo guardamos los datos</h2>
@@ -73,10 +73,11 @@ import { SUPPORT_EMAIL } from '../config';
       eliminar una conexión se borra la conversación.
     </p>
 
-    <h2>Tus derechos y cómo eliminar tu cuenta</h2>
+    <h2 id="eliminar-cuenta">Tus derechos y cómo eliminar tu cuenta</h2>
     <p>
       Puedes editar tu perfil en cualquier momento. Para eliminar tu cuenta ve a <strong>Configuración →
-      Eliminar cuenta</strong> en la app: se borran tu perfil, tus conexiones y tus mensajes. Para cualquier
+      Eliminar cuenta</strong> en la app: se borran tu perfil, tus conexiones y tus mensajes. Si ya no tienes
+      la app, sigue los pasos de <a href="/eliminar-cuenta">Eliminar tu cuenta</a>. Para cualquier
       otra solicitud sobre tus datos escríbenos a <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>.
     </p>
 
