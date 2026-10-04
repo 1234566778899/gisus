@@ -1,0 +1,47 @@
+---
+// Estándares contra el abuso y la explotación sexual infantil (los pide Google Play a las apps sociales y de citas).
+import Base from '../layouts/Base.astro';
+import { SUPPORT_EMAIL } from '../config';
+---
+
+<Base
+  title="Seguridad infantil — Gisi"
+  description="Los estándares de Gisi contra el abuso y la explotación sexual infantil."
+>
+  <article class="container prose">
+    <h1>Estándares de seguridad infantil</h1>
+    <p class="updated">Última actualización: 4 de octubre de 2026</p>
+
+    <p>
+      Gisi prohíbe por completo el abuso y la explotación sexual infantil (CSAE), incluido el material de abuso
+      sexual infantil (CSAM). Cualquier contenido o conducta de este tipo se elimina y la cuenta se cierra de forma
+      permanente.
+    </p>
+
+    <h2>Solo para mayores de 18 años</h2>
+    <p>
+      Gisi es solo para personas adultas. Al crear el perfil se pide la edad y no se puede continuar con menos de
+      18 años. Si sabemos que una cuenta pertenece a un menor, la eliminamos.
+    </p>
+
+    <h2>Qué está prohibido</h2>
+    <ul>
+      <li>Compartir, pedir o promocionar material de abuso sexual infantil.</li>
+      <li>Contactar a menores con fines sexuales (grooming) o sexualizar a menores de cualquier forma.</li>
+      <li>Usar Gisi para facilitar la trata o la explotación de menores.</li>
+    </ul>
+
+    <h2>Cómo reportar</h2>
+    <p>
+      Desde la app puedes reportar y bloquear a cualquier persona en su perfil, en el chat o en un plan. También
+      puedes escribirnos a <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>. Revisamos los reportes,
+      eliminamos el contenido y las cuentas que incumplan estas normas y, cuando corresponde, lo comunicamos a las
+      autoridades competentes y al NCMEC u organizaciones equivalentes de cada país, conforme a la ley.
+    </p>
+
+    <h2>Contacto</h2>
+    <p>
+      Para temas de seguridad infantil escríbenos a <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>.
+    </p>
+  </article>
+</Base>
