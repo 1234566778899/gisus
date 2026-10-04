@@ -1,6 +1,6 @@
 ---
 title: '¿Cómo funciona Gisus? El radar por Bluetooth, explicado'
-description: 'Qué detecta el radar de Gisus, por qué no comparte tu ubicación, cómo se hace un match y qué controlas tú. Todo explicado paso a paso.'
+description: 'Qué detecta el radar de Gisus, por qué no comparte tu ubicación, cómo conectas con alguien (para amistad, networking o citas) y qué controlas tú. Todo explicado paso a paso.'
 pubDate: 2026-10-02
 mascot: scanning
 featured: true
@@ -23,13 +23,13 @@ Lo importante es lo que **no** hace:
 
 > En pocas palabras: Gisus sabe que alguien está cerca, no dónde está.
 
-## Del radar al match
+## Del radar a la conexión
 
 En la pestaña **Cerca** ves a las personas que el radar encontró, de la más cercana a la más lejana. Al tocar a alguien se abre su ficha, con sus fotos, lo que busca (amistad, citas o networking) y sus intereses.
 
-Si te gusta, toca **Me interesa**. Pueden pasar dos cosas:
+Si quieres conocerla, ya sea para hacer amistad, networking o una cita, toca **Me interesa**. Pueden pasar dos cosas:
 
-1. **Si el interés es mutuo**, hacen match y se abre el chat para que se conozcan.
+1. **Si el interés es mutuo**, conectan y se abre el chat para que se conozcan.
 2. **Si todavía no**, esa persona te verá en su sección **Les interesas** y podrá decidir.
 
 Si alguien no es para ti, toca la **X** ("No me interesa") y deja de aparecerte.
@@ -40,9 +40,9 @@ La privacidad de Gisus no depende de que confíes en nadie: depende de ajustes q
 
 - **Apaga el radar** cuando quieras. Sin radar, nadie te detecta.
 - **Modo invisible**: en Configuración puedes dejar de aparecer en el radar de los demás.
-- **Tu nombre antes del match**: puedes mostrarlo o aparecer como anónimo hasta que haya match.
+- **Tu nombre antes de conectar**: puedes mostrarlo o aparecer como anónimo hasta que conecten.
 - **Bloquear y reportar**: desde la ficha de cualquier persona. Si te equivocas, lo deshaces en Configuración → Bloqueadas y ocultas.
-- **Eliminar tu cuenta** desde la app, junto con tu perfil, matches y mensajes.
+- **Eliminar tu cuenta** desde la app, junto con tu perfil, conexiones y mensajes.
 
 ## Los planes: conocer gente en grupo
 
@@ -52,7 +52,7 @@ Para el mapa sí se usa la ubicación, pero **solo en tu teléfono**, para centr
 
 ## El chat
 
-Cuando hay match, el chat ofrece sugerencias para romper el hielo y deja enviar **fotos, notas de voz y stickers de Gisi**. También puedes crear stickers con tus propias fotos. Las conversaciones solo las ven tú y tu match.
+Cuando conectan, el chat ofrece sugerencias para romper el hielo y deja enviar **fotos, notas de voz y stickers de Gisi**. También puedes crear stickers con tus propias fotos. Las conversaciones solo las ven ustedes dos.
 
 ## Lo que necesitas
 

@@ -6,7 +6,6 @@ import { APP_NAME, APP_STORE_URL, DEFAULT_DESCRIPTION, SITE_URL } from '../confi
 import appIcon from '../assets/app-icon.png';
 import waving from '../assets/mascot/waving.png';
 import scanning from '../assets/mascot/scanning.png';
-import inLove from '../assets/mascot/inLove.png';
 import inviting from '../assets/mascot/inviting.png';
 import celebrating from '../assets/mascot/celebrating.png';
 import sleeping from '../assets/mascot/sleeping.png';
@@ -18,7 +17,7 @@ import screenChat from '../assets/screens/chat.png';
 // Fila de accesos bajo el título (como la de modelos en apple.com/ipad).
 const chips = [
   { href: '#radar', label: 'Radar', img: scanning },
-  { href: '#match', label: 'Match', img: inLove },
+  { href: '#conecta', label: 'Conecta', img: waving },
   { href: '#planes', label: 'Planes', img: inviting },
   { href: '#chat', label: 'Chat', img: celebrating },
   { href: '#invisible', label: 'Modo invisible', img: sleeping },
@@ -32,8 +31,8 @@ const screens = [
     alt: 'Pantalla Planes de Gisus: un mapa con planes cercanos, cada uno con su nombre y categoría, como un café, una rodada en bici y una expo.' },
   { pos: 'center', img: screenNearby, caption: 'Radar de quién está cerca',
     alt: 'Pantalla Cerca de ti de Gisus: el radar muestra a ocho personas cerca, con su distancia aproximada.' },
-  { pos: 'right', img: screenChat, caption: 'Chat con tus matches',
-    alt: 'Chat de Gisus con un match: mensajes para quedar en un plan de café y un sticker de Gisi.' },
+  { pos: 'right', img: screenChat, caption: 'Chat con tus conexiones',
+    alt: 'Chat de Gisus entre dos personas que conectaron: mensajes para quedar en un plan de café y un sticker de Gisi.' },
 ];
 
 // Tarjetas de la galería "Conoce a Gisi."
@@ -44,9 +43,9 @@ const cards = [
     text: 'Enciende tu radar y Gisus detecta por Bluetooth a las personas a tu alrededor.',
   },
   {
-    id: 'match', theme: 'pink', img: inLove, eyebrow: 'Match',
-    title: 'Di que te interesa.',
-    text: 'Si el interés es mutuo, hacen match y se abre el chat.',
+    id: 'conecta', theme: 'pink', img: waving, eyebrow: 'Amistad · Networking · Citas',
+    title: 'Conecta a tu manera.',
+    text: 'Elige qué buscas: amistad, networking o citas. Si el interés es mutuo, conectan y se abre el chat.',
   },
   {
     id: 'planes', theme: 'blush', img: inviting, eyebrow: 'Planes',
@@ -61,21 +60,21 @@ const cards = [
   {
     id: 'invisible', theme: 'white', img: sleeping, eyebrow: 'Modo invisible',
     title: 'Tú decides cuándo te ven.',
-    text: 'Apaga el radar o ponte invisible, y elige si muestras tu nombre antes del match.',
+    text: 'Apaga el radar o ponte invisible, y elige si muestras tu nombre antes de conectar.',
   },
 ];
 
 const steps = [
   { n: '1', title: 'Enciende tu radar', text: 'Gisus encuentra a las personas que también lo tienen encendido cerca de ti.' },
-  { n: '2', title: 'Di que te interesa', text: 'Mira sus fotos e intereses y, si te gusta, envíale un “me interesa”.' },
-  { n: '3', title: 'Hagan match y hablen', text: 'Si es mutuo, se abre el chat para conocerse antes de verse.' },
+  { n: '2', title: 'Mira qué busca', text: 'Cada perfil dice si busca amistad, networking o citas. Revisa sus fotos e intereses.' },
+  { n: '3', title: 'Conecten y hablen', text: 'Si el interés es mutuo, se abre el chat para conocerse antes de verse.' },
 ];
 
 const privacy = [
   { title: 'Proximidad, no posición.', text: 'El radar sabe que alguien está cerca, no dónde. Tu ubicación no se comparte con nadie.' },
-  { title: 'Chats solo con tus matches.', text: 'Solo tú y tus matches ven sus conversaciones y fotos.' },
+  { title: 'Chats solo con tus conexiones.', text: 'Solo tú y tus conexiones ven sus conversaciones y fotos.' },
   { title: 'Bloquea cuando quieras.', text: 'Bloquea o reporta a cualquiera, y deshazlo desde Configuración si fue un error.' },
-  { title: 'Tu cuenta, tus datos.', text: 'Puedes eliminar tu cuenta desde la app, con tu perfil, matches y mensajes.' },
+  { title: 'Tu cuenta, tus datos.', text: 'Puedes eliminar tu cuenta desde la app, con tu perfil, conexiones y mensajes.' },
 ];
 
 const appJsonLd = {
@@ -97,7 +96,7 @@ const appJsonLd = {
     <div class="container hero-copy">
       <h1 id="hero-title" class="display">Gisus</h1>
       <p class="hero-lead">Conoce a quien tienes cerca.</p>
-      <p class="hero-sub">Enciende tu radar, haz match con quien te interesa y únete a planes en tu zona.</p>
+      <p class="hero-sub">Enciende tu radar y haz amigos, networking o encuentra una cita con quien está a unos metros. Y únete a planes en tu zona.</p>
       <div class="hero-cta">
         <a class="btn" href={APP_STORE_URL} rel="noopener">Descargar en la App Store</a>
         <a href="#como-funciona" class="link-more">Cómo funciona</a>

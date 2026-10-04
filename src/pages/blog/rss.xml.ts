@@ -8,7 +8,7 @@ export async function GET(context: APIContext) {
   const posts = sortPosts(await getCollection('blog'));
   return rss({
     title: 'Blog de Gisus',
-    description: 'Ideas para conocer gente cerca de ti, consejos para la primera cita y guías de Gisus.',
+    description: 'Ideas para hacer amigos y contactos cerca de ti, consejos para tu primera cita y guías de Gisus.',
     site: context.site!,
     items: posts.map((p) => ({
       title: p.data.title,

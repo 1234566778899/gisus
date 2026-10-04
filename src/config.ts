@@ -11,4 +11,4 @@ export const APP_STORE_URL = `https://apps.apple.com/app/id${APP_STORE_ID}`;
 export const DEFAULT_TITLE = 'Gisus — Conoce a quien tienes cerca';
 export const DEFAULT_DESCRIPTION =
   'Gisus detecta a las personas que están cerca de ti con un radar por Bluetooth. ' +
-  'Di que te interesa, haz match y únete a planes en tu zona. Tu ubicación nunca se comparte.';
+  'Haz amigos, networking o encuentra una cita, y únete a planes en tu zona. Tu ubicación nunca se comparte.';
