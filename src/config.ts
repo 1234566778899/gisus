@@ -1,8 +1,8 @@
 // Datos del sitio en un solo lugar.
 // ⚠️ Antes de publicar: cambia SITE_URL por tu dominio real y SUPPORT_EMAIL por un correo que revises.
 
-export const SITE_URL = 'https://gisus.site';
-export const SUPPORT_EMAIL = 'soporte@gisus.site';
+export const SITE_URL = 'https://gisi.online';
+export const SUPPORT_EMAIL = 'soporte@gisi.online';
 
 export const APP_NAME = 'Gisi';
 export const APP_STORE_ID = '6780263578';
