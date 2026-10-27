@@ -1,6 +1,6 @@
 ---
 title: '¿Cómo funciona Gisi? El radar por Bluetooth, explicado'
-description: 'Qué detecta el radar de Gisi, por qué no comparte tu ubicación, cómo conectas con alguien (para amistad, networking o citas) y qué controlas tú. Todo explicado paso a paso.'
+description: 'Qué detecta el radar de Gisi, por qué no comparte tu ubicación, cómo conectas con alguien (para networking, amistad o citas) y qué controlas tú. Todo explicado paso a paso.'
 pubDate: 2026-10-02
 mascot: scanning
 featured: true
@@ -25,12 +25,18 @@ Lo importante es lo que **no** hace:
 
 ## Del radar a la conexión
 
-En la pestaña **Cerca** ves a las personas que el radar encontró, de la más cercana a la más lejana. Al tocar a alguien se abre su ficha, con sus fotos, lo que busca (amistad, citas o networking) y sus intereses.
+En la pestaña **Cerca** ves a las personas que el radar encontró, de la más cercana a la más lejana. Cada una lleva un distintivo con lo que busca (**amistad**, **networking** o **citas**) y puedes filtrar el radar para ver solo a quienes buscan lo mismo que tú. Al tocar a alguien se abre su ficha, con sus fotos, su intención y sus intereses.
 
-Si quieres conocerla, ya sea para hacer amistad, networking o una cita, toca **Me interesa**. Pueden pasar dos cosas:
+El botón para conectar cambia según lo que buscan los dos, para que nadie se sienta incómodo:
 
-1. **Si el interés es mutuo**, conectan y se abre el chat para que se conozcan.
-2. **Si todavía no**, esa persona te verá en su sección **Les interesas** y podrá decidir.
+- **Conectar**, si alguno de los dos busca networking.
+- **Saludar**, si buscan amistad.
+- **Me interesa**, solo si los dos buscan citas.
+
+Después pueden pasar dos cosas:
+
+1. **Si los dos quieren**, conectan y se abre el chat para que se conozcan.
+2. **Si todavía no**, esa persona te verá en **Mensajes → Quieren conocerte** y podrá decidir.
 
 Si alguien no es para ti, toca la **X** ("No me interesa") y deja de aparecerte.
 
@@ -46,13 +52,15 @@ La privacidad de Gisi no depende de que confíes en nadie: depende de ajustes qu
 
 ## Los planes: conocer gente en grupo
 
-No todo tiene que ser uno a uno. En la pestaña **Planes** hay un mapa con actividades cerca de ti: un café, una rodada en bici, una expo o una noche de baile. Puedes unirte a uno o crear el tuyo, y quienes van comparten un **chat de grupo** para organizarse.
+No todo tiene que ser uno a uno. **Planes** es la primera pestaña de la app: un mapa con actividades cerca de ti: un café, una rodada en bici, una expo o una noche de baile. Puedes unirte a uno o crear el tuyo, y quienes van comparten un **chat de grupo** para organizarse.
 
 Para el mapa sí se usa la ubicación, pero **solo en tu teléfono**, para centrarlo. Lo que se guarda es el lugar público del plan, nunca dónde estás tú.
 
 ## El chat
 
-Cuando conectan, el chat ofrece sugerencias para romper el hielo y deja enviar **fotos, notas de voz y stickers de Gisi**. También puedes crear stickers con tus propias fotos. Las conversaciones solo las ven ustedes dos.
+Cuando conectan, el chat ofrece sugerencias para romper el hielo y deja enviar **fotos, notas de voz y stickers de Gisi**. También puedes crear stickers con tus propias fotos, y ves si la otra persona está **en línea** o cuándo se conectó por última vez.
+
+Los mensajes se guardan **en tu teléfono**, como en WhatsApp: el servidor solo los guarda hasta entregarlos y después los borra. Las conversaciones solo las ven ustedes dos.
 
 ## Lo que necesitas
 
