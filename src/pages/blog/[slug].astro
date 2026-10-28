@@ -2,7 +2,8 @@
 import { Image } from 'astro:assets';
 import { getCollection, render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
-import { APP_NAME, APP_STORE_URL, PLAY_STORE_URL, SITE_URL } from '../../config';
+import StoreButton from '../../components/StoreButton.astro';
+import { APP_NAME, SITE_URL } from '../../config';
 import appIcon from '../../assets/app-icon.png';
 import { formatDate, mascots, readingMinutes, sortPosts, type Post } from '../../lib/blog';
 
@@ -84,8 +85,8 @@ const related = sortPosts(all.filter((p) => p.id !== post.id)).slice(0, 2);
           <p class="cta-title">Conoce a quien tienes cerca con Gisi.</p>
           <p class="cta-text">Enciende tu radar, conecta con quien está cerca y únete a planes en tu zona. Gratis para iPhone y Android.</p>
           <div class="cta-btns">
-            <a class="btn" href={APP_STORE_URL} rel="noopener">Descargar en la App Store</a>
-            <a class="btn" href={PLAY_STORE_URL} rel="noopener">Disponible en Google Play</a>
+            <StoreButton store="apple" />
+            <StoreButton store="google" />
           </div>
         </div>
       </div>

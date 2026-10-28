@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import Base from '../layouts/Base.astro';
+import StoreButton from '../components/StoreButton.astro';
 import { APP_NAME, APP_STORE_URL, DEFAULT_DESCRIPTION, PLAY_STORE_URL, SITE_URL } from '../config';
 
 import appIcon from '../assets/app-icon.png';
@@ -99,8 +100,10 @@ const appJsonLd = {
       <p class="hero-lead">Conoce a quien tienes cerca.</p>
       <p class="hero-sub">Enciende tu radar y haz amigos, networking o encuentra una cita con quien está a unos metros. Y únete a planes en tu zona.</p>
       <div class="hero-cta">
-        <a class="btn" href={APP_STORE_URL} rel="noopener">Descargar en la App Store</a>
-        <a class="btn" href={PLAY_STORE_URL} rel="noopener">Disponible en Google Play</a>
+        <div class="store-btns">
+          <StoreButton store="apple" />
+          <StoreButton store="google" />
+        </div>
         <a href="#como-funciona" class="link-more">Cómo funciona</a>
       </div>
     </div>
@@ -141,7 +144,7 @@ const appJsonLd = {
   <section class="section section-alt" aria-labelledby="gallery-title">
     <div class="container section-head">
       <h2 id="gallery-title" class="headline">Conoce a Gisi.</h2>
-      <a href={APP_STORE_URL} rel="noopener" class="link-more">Descargar la app</a>
+      <a href="#descargar" class="link-more">Descargar la app</a>
     </div>
 
     <div class="gallery" data-gallery>
@@ -205,8 +208,8 @@ const appJsonLd = {
       <p class="lead">Gratis para iPhone y Android.</p>
       <p class="langs">En español, inglés, portugués, francés y alemán.</p>
       <div class="download-btns">
-        <a class="btn btn-dark" href={APP_STORE_URL} rel="noopener">Descargar en la App Store</a>
-        <a class="btn btn-dark" href={PLAY_STORE_URL} rel="noopener">Disponible en Google Play</a>
+        <StoreButton store="apple" dark />
+        <StoreButton store="google" dark />
       </div>
       <Image src={waving} alt="" class="download-mascot" width={140} height={140} widths={[140, 280]} sizes="140px" />
     </div>
@@ -254,6 +257,7 @@ const appJsonLd = {
     margin: 16px auto 0;
   }
   .hero-cta { display: flex; justify-content: center; align-items: center; gap: 24px; flex-wrap: wrap; margin-top: 28px; font-size: 19px; }
+  .store-btns { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
 
   /* Tres iPhones: el del centro al frente, los laterales detrás y un poco más abajo */
   .phones {
