@@ -2,7 +2,7 @@
 import { Image } from 'astro:assets';
 import { getCollection, render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
-import { APP_NAME, APP_STORE_URL, SITE_URL } from '../../config';
+import { APP_NAME, APP_STORE_URL, PLAY_STORE_URL, SITE_URL } from '../../config';
 import appIcon from '../../assets/app-icon.png';
 import { formatDate, mascots, readingMinutes, sortPosts, type Post } from '../../lib/blog';
 
@@ -82,8 +82,11 @@ const related = sortPosts(all.filter((p) => p.id !== post.id)).slice(0, 2);
         <Image src={appIcon} alt="" class="cta-icon" width={72} height={72} widths={[72, 144]} sizes="72px" />
         <div>
           <p class="cta-title">Conoce a quien tienes cerca con Gisi.</p>
-          <p class="cta-text">Enciende tu radar, conecta con quien está cerca y únete a planes en tu zona. Disponible para iPhone.</p>
-          <a class="btn" href={APP_STORE_URL} rel="noopener">Descargar en la App Store</a>
+          <p class="cta-text">Enciende tu radar, conecta con quien está cerca y únete a planes en tu zona. Gratis para iPhone y Android.</p>
+          <div class="cta-btns">
+            <a class="btn" href={APP_STORE_URL} rel="noopener">Descargar en la App Store</a>
+            <a class="btn" href={PLAY_STORE_URL} rel="noopener">Disponible en Google Play</a>
+          </div>
         </div>
       </div>
     </aside>
@@ -151,6 +154,7 @@ const related = sortPosts(all.filter((p) => p.id !== post.id)).slice(0, 2);
   .cta-icon { width: 72px; height: 72px; border-radius: 16px; flex-shrink: 0; }
   .cta-title { font-size: 21px; font-weight: 700; margin: 0; color: var(--text); }
   .cta-text { color: var(--text-2); margin: 6px 0 16px; }
+  .cta-btns { display: flex; gap: 10px; flex-wrap: wrap; }
 
   .related-title { font-size: 28px; margin: 0 0 24px; }
   .related { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; list-style: none; margin: 0; padding: 0; }

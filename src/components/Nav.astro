@@ -1,7 +1,6 @@
 ---
 import { Image } from 'astro:assets';
 import logo from '../assets/logo.png';
-import { APP_STORE_URL } from '../config';
 
 // Barra global estilo apple.com: delgada, translúcida y fija arriba.
 const links = [
@@ -24,7 +23,7 @@ const links = [
         <li><a href={l.href}>{l.label}</a></li>
       ))}
     </ul>
-    <a class="get" href={APP_STORE_URL} rel="noopener">Descargar</a>
+    <a class="get" href="/#descargar">Descargar</a>
   </nav>
 </header>
 

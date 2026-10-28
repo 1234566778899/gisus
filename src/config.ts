@@ -7,6 +7,7 @@ export const SUPPORT_EMAIL = 'soporte@gisi.online';
 export const APP_NAME = 'Gisi';
 export const APP_STORE_ID = '6780263578';
 export const APP_STORE_URL = `https://apps.apple.com/app/id${APP_STORE_ID}`;
+export const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.carlosordaz.gisus';
 
 export const DEFAULT_TITLE = 'Gisi — Conoce a quien tienes cerca';
 export const DEFAULT_DESCRIPTION =

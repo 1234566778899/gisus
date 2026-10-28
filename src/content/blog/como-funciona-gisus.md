@@ -13,7 +13,7 @@ Aquí te contamos cómo funciona por dentro y qué decides tú en cada paso.
 
 ## El radar detecta proximidad, no tu posición
 
-Cuando enciendes el radar, tu iPhone usa **Bluetooth** para encontrar a otras personas que también lo tienen encendido. Bluetooth tiene un alcance corto, así que solo aparecen quienes están realmente cerca: en el mismo lugar o en la zona.
+Cuando enciendes el radar, tu teléfono usa **Bluetooth** para encontrar a otras personas que también lo tienen encendido. Bluetooth tiene un alcance corto, así que solo aparecen quienes están realmente cerca: en el mismo lugar o en la zona.
 
 Lo importante es lo que **no** hace:
 
@@ -64,6 +64,6 @@ Los mensajes se guardan **en tu teléfono**, como en WhatsApp: el servidor solo 
 
 ## Lo que necesitas
 
-Gisi funciona en iPhone con iOS 17 o posterior y necesita el Bluetooth activado. Para usar la app se requiere una suscripción, que se gestiona desde los ajustes de tu iPhone.
+Gisi es gratis y funciona en iPhone con iOS 17 o posterior y en Android 8.0 o posterior. Solo necesitas tener el Bluetooth activado.
 
 ¿Listo para ver quién está cerca? Enciende tu radar en tu próximo café.
